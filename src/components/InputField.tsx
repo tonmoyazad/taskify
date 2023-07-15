@@ -8,7 +8,12 @@ interface Props{
 
 const Input = ({todo,setTodo}:Props) => {
   return <form className= 'inputForm'>
-    <input type ='input' placeholder='Enter a Task' className='input__box'></input>
+    <input type ='input'
+    value={todo}
+    onChange={
+      (e)=>setTodo(e.target.value)
+    }
+    placeholder='Enter a Task' className='input__box'></input>
     <button className='input_submit' type='submit'>Go</button>
       </form>
 }
